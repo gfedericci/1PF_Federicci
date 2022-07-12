@@ -1,0 +1,50 @@
+[
+    {
+        "nombre": "Mauro",
+        "apellido": "Sanchez",
+        "fechaNacimiento": "1990-11-23T00:00:00",
+        "email": "msanchez@gmail.com",
+        "activo": true,
+        "curso": "SQL"
+    },
+    {
+        "nombre": "Alejandra",
+        "apellido": "Baldovino",
+        "fechaNacimiento": "1971-01-31T00:00:00",
+        "email": "abaldovino@gmail.com",
+        "activo": false,
+        "curso": "Scrum"
+    },
+    {
+        "nombre": "Nicolas",
+        "apellido": "Cordoba",
+        "fechaNacimiento": "1991-10-02T00:00:00",
+        "email": "ncordoba@gmail.com",
+        "activo": true,
+        "curso": "JS"
+    },
+    {
+        "nombre": "Rocio",
+        "apellido": "Nuñez",
+        "fechaNacimiento": "1995-09-12T00:00:00",
+        "email": "rnuñez@gmail.com",
+        "activo": true,
+        "curso": "Angular"
+    },
+    {
+        "nombre": "Diego",
+        "apellido": "Tello",
+        "fechaNacimiento": "1971-09-21T00:00:00",
+        "email": "dtello@gmail.com",
+        "activo": false,
+        "curso": "Angular"
+    },
+    {
+        "nombre": "Mauro Miguel",
+        "apellido": "Viejo",
+        "fechaNacimiento": "1978-08-03T00:00:00",
+        "email": "mmviejo@gmail.com",
+        "activo": false,
+        "curso": "Scrum"
+    }
+]

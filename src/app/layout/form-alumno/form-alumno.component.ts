@@ -11,8 +11,8 @@ import { Alumno } from 'src/app/alumno';
 export class FormAlumnoComponent implements OnInit {
   today = new Date();
   formAlumno!: FormGroup;
-  
-  cursos = ['Angular', 'Data Analitics','JS', 'Scrum', 'SQL'];
+
+  cursos = ['Angular', 'Data Analitics', 'JS', 'Scrum', 'SQL'];
 
   @Input() alumnoEditar!: Alumno;
   @Input() alumnos!: Alumno[];
@@ -24,7 +24,6 @@ export class FormAlumnoComponent implements OnInit {
   constructor(private fb: FormBuilder, private _snackBar: MatSnackBar) {
     this.fb = fb;
   }
-  
 
   ngOnInit(): void {
     var alumno = this.alumnoEditar || <Alumno>{};
@@ -47,7 +46,7 @@ export class FormAlumnoComponent implements OnInit {
   addAlumno() {
     if (this.formAlumno.valid) {
       var nuevoAlumno: Alumno;
-      nuevoAlumno = {...this.formAlumno.value};
+      nuevoAlumno = { ...this.formAlumno.value };
       this.alumnoAgregar.emit(nuevoAlumno);
       this._snackBar.open('El alumno ha sido registrado', '✔️');
     }
@@ -56,7 +55,7 @@ export class FormAlumnoComponent implements OnInit {
   editAlumno() {
     if (this.formAlumno.valid) {
       var alumnoActualizado: Alumno;
-      alumnoActualizado = {...this.formAlumno.value};
+      alumnoActualizado = { ...this.formAlumno.value };
       this.alumnoActualizar.emit(alumnoActualizado);
       this._snackBar.open('El alumno ha sido actualizado', '✔️');
     }

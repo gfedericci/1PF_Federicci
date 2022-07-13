@@ -1,4 +1,6 @@
-<h1 titulo>Alta de alumno</h1>
+<h1 titulo *ngIf="!alumnoEditar">Nuevo alumno</h1>
+<h1 titulo *ngIf="!!alumnoEditar">Editar alumno</h1>
+
 <form [formGroup]="formAlumno" (ngSubmit)="submit()">
     <mat-form-field appearance="fill">
         <mat-label>Nombre</mat-label>
@@ -29,14 +31,12 @@
         <mat-hint>DD/MM/YYYY</mat-hint>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
-        <!-- <div *ngIf="cNombre?.invalid && (cNombre?.dirty || cNombre?.touched)"  -->
         <mat-error *ngIf="formAlumno.get('fechaNacimiento')?.hasError('required')">
           Campo <strong>requerido</strong>.
         </mat-error>
         <mat-error *ngIf="formAlumno.get('fechaNacimiento')?.hasError('matDatepickerMax')">
           Fecha <strong>inválida</strong> (Debe ser anterior al día de hoy).
         </mat-error>
-      <!-- </div> -->
       </mat-form-field>
 
       <mat-form-field appearance="fill">
@@ -61,6 +61,7 @@
       </mat-form-field>
 
       <mat-slide-toggle formControlName="activo">Activo</mat-slide-toggle>
+
       <button mat-flat-button color="primary" type="submit" *ngIf="!alumnoEditar">Registrar</button>
       <button mat-flat-button color="primary" type="submit" *ngIf="!!alumnoEditar">Actualizar</button>
   </form>

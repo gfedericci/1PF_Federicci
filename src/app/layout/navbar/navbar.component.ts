@@ -44,6 +44,8 @@ export class NavbarComponent implements OnInit {
 
   addAlumno(alumno: Alumno) {
     this.listadoAlumnos.push(alumno);
+    
+    this.setAction('listado');
   }
 
   removeAlumno(index: number) {
@@ -53,6 +55,7 @@ export class NavbarComponent implements OnInit {
   updateAlumno(alumno: Alumno) {
     console.log(alumno);
     this.listadoAlumnos[alumno.index] = alumno;
-  }
 
+    this.setAction('listado');
+  }
 }

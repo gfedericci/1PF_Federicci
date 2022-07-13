@@ -27,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { TableComponent } from './layout/table/table.component';
+import { FormAlumnoComponent } from './layout/form-alumno/form-alumno.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { TableComponent } from './layout/table/table.component';
     TituloDirective,
     ToolbarComponent,
     NavbarComponent,
-    TableComponent
+    TableComponent,
+    FormAlumnoComponent
   ],
   imports: [
     BrowserModule,

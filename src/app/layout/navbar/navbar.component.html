@@ -1,21 +1,26 @@
 <mat-sidenav-container>
-    <mat-sidenav opened mode="side">
-      <mat-list>
-        <mat-list-item> 
-          <button mat-button color="primary" (click)="setAction('alta')">Nuevo alumno</button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button color="primary" (click)="setAction('listado')">Listado Alumnos</button>
-        </mat-list-item>
-        
-        <mat-list-item>
-          <button mat-raised-button color="accent" (click)="reloadJson()" *ngIf="!listadoAlumnos.length">Recargar JSON</button>
-        </mat-list-item>
-       
-      </mat-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <app-table *ngIf="action=='listado'" [alumnos]="listadoAlumnos" (alumnoEditar)="editAlumno($event)" (alumnoEliminar)="removeAlumno($event)"></app-table>
+  <mat-sidenav opened mode="side">
+    <mat-list>
+      <mat-list-item>
+        <button mat-button color="primary" (click)="setAction('alta')">Nuevo alumno</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button color="primary" (click)="setAction('listado')">Listado Alumnos</button>
+      </mat-list-item>
 
-    </mat-sidenav-content>
+      <mat-list-item>
+        <button mat-raised-button color="accent" (click)="reloadJson()" *ngIf="!listadoAlumnos.length">Recargar
+          JSON</button>
+      </mat-list-item>
+
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-form-alumno *ngIf="action=='alta'" (alumnoAgregar)="addAlumno($event)"></app-form-alumno>
+    <app-form-alumno *ngIf="action=='editar'" (alumnoActualizar)="updateAlumno($event)" [alumnoEditar]="alumnoEditar"></app-form-alumno>
+
+    <app-table *ngIf="action=='listado'" [alumnos]="listadoAlumnos" (alumnoEditar)="editAlumno($event)"
+      (alumnoEliminar)="removeAlumno($event)"></app-table>
+
+  </mat-sidenav-content>
 </mat-sidenav-container>
